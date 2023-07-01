@@ -34,5 +34,29 @@ public :
 		newNode->info = element;	// Assign value to the data field of the new node
 		newNode->LeftChild = NULL;	// Make the left child of the new node point to NULL
 		newNode->RightChild = NULL;	// Make the right child of the new node point to NULL
+	
+		Node* parent = NULL;
+		Node* currentNode = NULL;
+		Search(element, parent, currentNode);	// Locate the node which will be the parent of the node to be inserted
+	
+		if (parent == NULL)	// if the parrent is NULL (Tree is empty)
+		{
+			ROOT = newNode;	// Mark the new node as ROOT
+			return;	// Exit
+		}
+
+		if (element < parent->info)	// if the value in the data field of the new node is less than that of the parent
+		{
+			parent->LeftChild = newNode;	// make the left child of the parent point to the new node
+		}
+		else if (element > parent->info)		// if the value in the data field of the new node is greather than that of the parent
+		{
+			parent->RightChild = newNode;	// make the right child of the parent point to the new node
+		}
+	}
+
+	void Search(string element, Node*& parent, Node*& currentNode)
+	{
+		//
 	}
 };
