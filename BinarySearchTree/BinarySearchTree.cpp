@@ -17,3 +17,8 @@ public :
 		RightChild = R;
 	}
 };
+
+class BinaryTree
+{
+
+};
